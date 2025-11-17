@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Quiz de Marketing</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Partículas de fundo -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Confete para acertos -->
+    <div class="confetti-container" id="confetti-container"></div>
+    
+    <!-- Áudio de fundo -->
+    <audio id="background-music" loop>
+        <source src="Billie Eilish - i love you (Instrumental) [82Lj9hpk0IY].mp3" type="audio/mpeg">
+        <source src="background-music.mp3" type="audio/mpeg">
+        <source src="background-music.ogg" type="audio/ogg">
+        Seu navegador não suporta áudio.
+    </audio>
+    
+    <!-- Controle de áudio -->
+    <button id="audio-toggle" class="audio-control" title="Ligar/Desligar Música">
+        <span id="audio-icon">🔊</span>
+    </button>
+    
+    <!-- Tela Inicial -->
+    <div id="start-screen" class="screen active">
+        <div class="container">
+            <div class="logo">
+                <h1 class="title">quiz!</h1>
+                <div class="subtitle">Quiz de Marketing</div>
+            </div>
+            <div class="start-content">
+                <h2>Bem-vindo ao Quiz de Marketing!</h2>
+                <p>Teste seus conhecimentos sobre conceitos de marketing</p>
+                <button id="start-btn" class="btn btn-primary">COMEÇAR</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tela do Jogo -->
+    <div id="game-screen" class="screen">
+        <div class="game-container">
+            <!-- Header com número da questão e timer -->
+            <div class="game-header">
+                <div class="question-number">
+                    Pergunta <span id="current-question">1</span> de <span id="total-questions">27</span>
+                </div>
+                <div class="timer-container">
+                    <div class="timer" id="timer">30</div>
+                </div>
+                <div class="score">
+                    Pontos: <span id="score">0</span>
+                </div>
+            </div>
+
+            <!-- Pergunta -->
+            <div class="question-container">
+                <h2 class="question-text" id="question-text"></h2>
+            </div>
+
+            <!-- Feedback de Pontos e Tempo -->
+            <div id="feedback-container" style="display: none;">
+                <div class="points-earned" id="points-earned"></div>
+                <div class="time-used" id="time-used"></div>
+            </div>
+
+            <!-- Opções de Resposta -->
+            <div class="answers-container" id="answers-container">
+                <!-- As opções serão geradas dinamicamente -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Tela de Resultado Final -->
+    <div id="result-screen" class="screen">
+        <div class="container">
+            <div class="result-content">
+                <h1 class="result-title">FIM DO QUIZ!</h1>
+                <div class="final-score">
+                    <div class="score-label">Sua Pontuação Final</div>
+                    <div class="score-value" id="final-score">0</div>
+                    <div class="score-percentage" id="score-percentage">0%</div>
+                </div>
+                <div class="result-stats">
+                    <div class="stat">
+                        <div class="stat-value" id="correct-answers">0</div>
+                        <div class="stat-label">Corretas</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" id="wrong-answers">0</div>
+                        <div class="stat-label">Erradas</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" id="total-time">0s</div>
+                        <div class="stat-label">Tempo Total</div>
+                    </div>
+                </div>
+                <button id="restart-btn" class="btn btn-primary">JOGAR NOVAMENTE</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Site feito por <span class="footer-highlight">jojao10pc</span> e design feito por <span class="footer-highlight">Cathe</span></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
